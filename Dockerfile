@@ -20,23 +20,18 @@ RUN bunx prisma generate
 RUN bun run build
 
 # Production stage
-FROM oven/bun:1-slim AS runner
+FROM oven/bun:1 AS runner
 
 WORKDIR /app
 
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Create non-root user
-RUN addgroup -g 1001 -S nodejs && adduser -u 1001 -S -G nodejs nextjs    adduser --system --uid 1001 nextjs
-
 # Copy necessary files from builder
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --from=builder --chown=nextjs:nodejs /app/public ./public
-COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
-
-USER nextjs
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 
 EXPOSE 3000
 
