@@ -4,8 +4,7 @@ FROM oven/bun:1 AS builder
 WORKDIR /app
 
 # Copy package files
-COPY package.json bun.lock* ./
-COPY prisma ./prisma/
+COPY package*.json bun.lock* ./
 
 # Install dependencies
 RUN bun install --frozen-lockfile
@@ -13,26 +12,21 @@ RUN bun install --frozen-lockfile
 # Copy source code
 COPY . .
 
-# Generate Prisma client
-RUN bunx prisma generate
-
-# Build Next.js application
-RUN bun run build
-
 # Production stage
 FROM oven/bun:1 AS runner
 
 WORKDIR /app
 
-ENV NODE_ENV=production
+ENV NODE_ENV=development
 ENV PORT=3000
 
 # Copy necessary files from builder
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/package*.json ./
+COPY --from=builder /app/bun.lock* ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/app ./app
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/node_modules/.prisma ./node_modules/.prisma
 
 EXPOSE 3000
 
-CMD ["bun", "server.js"]
+CMD ["bun", "run", "dev"]
