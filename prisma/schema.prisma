@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Game {
+  id           String @id @default(cuid())
+  weekNumber   Int
+  gameNumber   Int
+  homeTeam     String
+  awayTeam     String
+  weightHome   Int    @default(33) // Weight for 1 (home win)
+  weightDraw   Int    @default(34) // Weight for X (draw)
+  weightAway   Int    @default(33) // Weight for 2 (away win)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model BetSet {
+  id        String   @id @default(cuid())
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  rows      BetRow[]
+}
+
+model BetRow {
+  id        String  @id @default(cuid())
+  betSetId  String
+  picks     String  // Array of 13 outcomes as string "1,X,2,1,X,2,1,X,2,1,X,2,1"
+  rowNumber Int
+  createdAt DateTime @default(now())
+  betSet    BetSet  @relation(fields: [betSetId], references: [id], onDelete: Cascade)
+}

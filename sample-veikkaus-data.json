@@ -1,0 +1,127 @@
+{
+  "scraped_at": "2026-01-12T10:25:35.718560",
+  "url": "https://www.veikkaus.fi/fi/vedonlyonti/vakio",
+  "game_name": "Lauantaivakio 1",
+  "sport": "Jalkapallo",
+  "closing_time": "Sulkeutuu",
+  "pool_size": "6 277,00 €",
+  "matches": [
+    {
+      "match_number": "1",
+      "home_team": "Nottingham",
+      "away_team": "Arsenal",
+      "percentage_1": 39,
+      "percentage_x": 18,
+      "percentage_2": 42,
+      "total": 99
+    },
+    {
+      "match_number": "2",
+      "home_team": "Liverpool",
+      "away_team": "Burnley",
+      "percentage_1": 61,
+      "percentage_x": 19,
+      "percentage_2": 19,
+      "total": 99
+    },
+    {
+      "match_number": "3",
+      "home_team": "Chelsea",
+      "away_team": "Brentford",
+      "percentage_1": 46,
+      "percentage_x": 25,
+      "percentage_2": 28,
+      "total": 99
+    },
+    {
+      "match_number": "4",
+      "home_team": "Sunderland",
+      "away_team": "Crystal P",
+      "percentage_1": 43,
+      "percentage_x": 29,
+      "percentage_2": 28,
+      "total": 100
+    },
+    {
+      "match_number": "5",
+      "home_team": "Tottenham",
+      "away_team": "West Ham",
+      "percentage_1": 57,
+      "percentage_x": 22,
+      "percentage_2": 20,
+      "total": 99
+    },
+    {
+      "match_number": "6",
+      "home_team": "Leeds U",
+      "away_team": "Fulham",
+      "percentage_1": 39,
+      "percentage_x": 25,
+      "percentage_2": 36,
+      "total": 100
+    },
+    {
+      "match_number": "7",
+      "home_team": "Southampton",
+      "away_team": "Hull",
+      "percentage_1": 43,
+      "percentage_x": 30,
+      "percentage_2": 27,
+      "total": 100
+    },
+    {
+      "match_number": "8",
+      "home_team": "Stoke",
+      "away_team": "QPR",
+      "percentage_1": 46,
+      "percentage_x": 27,
+      "percentage_2": 27,
+      "total": 100
+    },
+    {
+      "match_number": "9",
+      "home_team": "Preston",
+      "away_team": "Derby",
+      "percentage_1": 50,
+      "percentage_x": 25,
+      "percentage_2": 25,
+      "total": 100
+    },
+    {
+      "match_number": "10",
+      "home_team": "Swansea",
+      "away_team": "Birmingham",
+      "percentage_1": 46,
+      "percentage_x": 29,
+      "percentage_2": 26,
+      "total": 101
+    },
+    {
+      "match_number": "11",
+      "home_team": "Oxford U",
+      "away_team": "Bristol C",
+      "percentage_1": 38,
+      "percentage_x": 25,
+      "percentage_2": 37,
+      "total": 100
+    },
+    {
+      "match_number": "12",
+      "home_team": "Charlton",
+      "away_team": "Sheffield U",
+      "percentage_1": 36,
+      "percentage_x": 26,
+      "percentage_2": 38,
+      "total": 100
+    },
+    {
+      "match_number": "13",
+      "home_team": "Wrexham",
+      "away_team": "Norwich C",
+      "percentage_1": 51,
+      "percentage_x": 26,
+      "percentage_2": 23,
+      "total": 100
+    }
+  ]
+}
