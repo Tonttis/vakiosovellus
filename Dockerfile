@@ -28,8 +28,7 @@ ENV NODE_ENV=production
 ENV PORT=3000
 
 # Create non-root user
-RUN addgroup --system --gid 1001 nodejs && \
-    adduser --system --uid 1001 nextjs
+RUN addgroup -g 1001 -S nodejs && adduser -u 1001 -S -G nodejs nextjs    adduser --system --uid 1001 nextjs
 
 # Copy necessary files from builder
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
